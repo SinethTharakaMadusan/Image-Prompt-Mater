@@ -93,7 +93,12 @@ window.copySingleTag = (element) => {
 
     const originalText = element.innerText;
     element.innerText = "Copied!";
-    setTimeout(() => { element.innerText = originalText; }, 1000);
+    element.classList.add('copied');
+
+    setTimeout(() => {
+        element.innerText = originalText;
+        // Keep the copied class to show history
+    }, 1000);
 }
 
 window.copyDescription = () => {
