@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Metadata Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Image Prompt Master</h1>
+            <p>Generate professional names, tags, and descriptions for your AI art.</p>
+        </header>
+
+        <div class="input-section">
+            <input type="text" id="userInput" placeholder="Enter an idea (e.g., 'Retro Astronaut on Mars')...">
+            <button id="genBtn">Generate Metadata</button>
+        </div>
+
+        <div id="loader" class="hidden">Generating magic...</div>
+
+        <div id="resultCard" class="card hidden">
+            <div class="card-header">
+                <h2 id="imgName" onclick="copyName()" title="Click to copy">Image Name Here</h2>
+                <span class="badge">AI Generated</span>
+            </div>
+
+            <div class="tags-wrapper">
+                <div class="section-header">
+                    <h3>Tags</h3>
+                    <button class="icon-btn" onclick="copyTags()" title="Copy Tags">📋</button>
+                </div>
+                <div class="tag-container" id="tagList">
+                </div>
+            </div>
+
+            <div class="description-box">
+                <h3>Description</h3>
+                <p id="imgDesc" onclick="copyDescription()" title="Click to copy"></p>
+                <small id="charCount">0 characters</small>
+            </div>
+
+            <div class="prompt-box">
+                <h3>Technical Image Prompt</h3>
+                <code><p id="imgPrompt"></p></code>
+                <button onclick="copyPrompt()">Copy Prompt</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
